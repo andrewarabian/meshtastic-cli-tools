@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 # / /\ eshtastic CLIENT_HIDDEN Configuration Script for (Linux) - March 15, 2026 20:17PM PST
 # https://github.com/andrewarabian
 #
@@ -15,7 +16,6 @@
 # 
 # Please report all bugs or errors on my github page.
 #
-#
 echo -e "\e[32m       _//             _//_//      
       _//             _//  _//     
      _//             _//    _//    
@@ -24,28 +24,38 @@ echo -e "\e[32m       _//             _//_//
   _//             _//          _// 
  _//             _//            _//
                                    \e[0m"
+echo -e "\e[32mMeshtastic CLIENT_HIDDEN Deployment Script\e[0m"
+read -p "Enter New ID (LONG) (36 bytes) [press Enter to keep current]: " OWNER_LONG
+read -p "Enter New ID (SHORT) (4 bytes) [press Enter to keep current]: " OWNER_SHORT
+
 echo -e "\e[32mSetting device role to CLIENT_HIDDEN\e[0m"
 meshtastic --set device.role CLIENT_HIDDEN
+sleep 2
+
 echo -e "\e[32mDisabling smart broadcasts...\e[0m"
-sleep 1
 meshtastic --set position.position_broadcast_smart_enabled false
+sleep 2
+
 echo -e "\e[32mDisabling GPS positioning\e[0m"
-sleep 1
 meshtastic --set position.gps_mode DISABLED
+sleep 2
+
 echo -e "\e[32mSetting rebroadcast mode to ALL...\e[0m"
-sleep 1
 meshtastic --set device.rebroadcast_mode ALL
-echo -e "\e[32mNode ID configuration\e[0m"
-sleep 1
-read -p "Enter New ID (LONG) (36 bytes) [press Enter to keep current]: " OWNER_LONG
+sleep 2
+
+echo -e "\e[32mApplying node identity settings...\e[0m"
+
 if [ -n "$OWNER_LONG" ]; then
     meshtastic --set-owner "$OWNER_LONG"
+    sleep 2
 fi
 
-read -p "Enter New ID (SHORT) (4 bytes) [press Enter to keep current]: " OWNER_SHORT
 if [ -n "$OWNER_SHORT" ]; then
     meshtastic --set-owner-short "$OWNER_SHORT"
+    sleep 2
 fi
-sleep 3
+
 echo -e "\e[1;35mConfiguration Committed\e[0m"
+
 
