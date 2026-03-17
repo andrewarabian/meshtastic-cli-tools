@@ -11,7 +11,6 @@
 # 
 # Please report all bugs or errors on my github page.
 #
-#
 echo -e "\033[0;34m                                                 ##
                                                 ####
                                               ########
@@ -60,28 +59,44 @@ echo -e "\033[0;34m                                                 ##
                                              ##########
                                                 #####
                                                  ###  \033[0m"
-sleep 2
-echo -e "\e[32mSetting device role to TAK...\e[0m"
+
+echo -e "\e[32mMeshtastic TAK Configuration Script for (Linux)\e[0m"
+
+read -p "Enter New ID (LONG) (36 bytes) [press Enter to keep current]: " OWNER_LONG
+read -p "Enter New ID (SHORT) (4 bytes) [press Enter to keep current]: " OWNER_SHORT
+
+echo -e "\e[32mSetting device role to TAK\e[0m"
 meshtastic --set device.role TAK
+sleep 2
+
 echo -e "\e[32mUpdating smart broadcast minimum interval...\e[0m"
 meshtastic --set position.broadcast_smart_minimum_interval_secs 2	
+sleep 2
+
 echo -e "\e[32mUpdating GPS update interval...\e[0m"
 meshtastic --set position.gps_update_interval 2
+sleep 2
+
 echo -e "\e[32mUpdating broadcast position maximum interval...\e[0m"
 meshtastic --set position.position_broadcast_secs 2	
+sleep 2
+
 echo -e "\e[32mUpdating smart broadcast minimum distance...\e[0m"
 meshtastic --set position.broadcast_smart_minimum_distance 2
-echo -e "\e[32mTAK callsign configuration...\e[0m"
-sleep 1
-read -p "Enter new long callsign (36 chars) [Enter = keep current] : " OWNER_LONG
+sleep 2
+
+echo -e "\e[32mApplying node identity settings...\e[0m"
+
 if [ -n "$OWNER_LONG" ]; then
     meshtastic --set-owner "$OWNER_LONG"
+    sleep 2
 fi
 
-read -p "Enter new short callsign (4 chars) [Enter = keep current] : " OWNER_SHORT
 if [ -n "$OWNER_SHORT" ]; then
     meshtastic --set-owner-short "$OWNER_SHORT"
+    sleep 2
 fi
-sleep 3
+
 echo -e "\e[1;35mConfiguration Committed\e[0m"
+
 
