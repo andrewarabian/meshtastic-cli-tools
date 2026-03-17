@@ -60,7 +60,7 @@ echo -e "\033[0;34m                                                 ##
                                                 #####
                                                  ###  \033[0m"
 
-echo -e "\e[32mMeshtastic TAK Configuration Script for (Linux)\e[0m"
+echo -e "\e[32mMeshtastic TAK Deployment Script\e[0m"
 
 read -p "Enter New ID (LONG) (36 bytes) [press Enter to keep current]: " OWNER_LONG
 read -p "Enter New ID (SHORT) (4 bytes) [press Enter to keep current]: " OWNER_SHORT
