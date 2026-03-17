@@ -6,6 +6,7 @@
 #
 # For systems that use pipx ex. (CentOS) use the pipx counterpart.
 #
+#
 echo -e "\e[32m       _//             _//_//      
       _//             _//  _//     
      _//             _//    _//    
