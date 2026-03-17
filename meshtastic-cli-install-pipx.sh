@@ -6,7 +6,6 @@
 #
 # For systems that use pip3 ex. (Fedora 43) use the pip3 counterpart.
 #
-#
 echo -e "\e[32m       _//             _//_//      
       _//             _//  _//     
      _//             _//    _//    
