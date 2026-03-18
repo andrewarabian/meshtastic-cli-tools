@@ -24,7 +24,7 @@ echo -e "\e[32m       _//             _//_//
   _//             _//          _// 
  _//             _//            _//
                                    \e[0m"
-echo -e "\e[32mMeshtastic CLIENT_HIDDEN Deployment Script\e[0m"
+echo -e "\e[32mCLIENT_HIDDEN Deployment Script\e[0m"
 read -p "Enter New ID (LONG) (36 bytes) [press Enter to keep current]: " OWNER_LONG
 read -p "Enter New ID (SHORT) (4 bytes) [press Enter to keep current]: " OWNER_SHORT
 
