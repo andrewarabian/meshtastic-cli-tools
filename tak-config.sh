@@ -2,7 +2,7 @@
 # / /\ eshtastic TAK Configuration Script for (Linux) - March 11, 2026 20:17PM PST
 # https://github.com/andrewarabian
 #
-# Streamline TAK use for Meshtastic nodes
+# Configures Meshtastic nodes to show precise locations, and swift broadcast updates for optimal TAK (Team Awareness Kit) usage.
 #
 # Testing indicates that a 2-second interval provides stable TAK GPS positioning on firmware 2.7.15.
 # Using values below 2 seconds may cause GPS instability or prevent positioning from working correctly.
