@@ -4,10 +4,10 @@
 #
 # Streamline TAK use for Meshtastic nodes
 #
-# Testing indicates that a 2-second interval provides stable TAK GPS positioning on firmware 2.7.15.
+# Testing indicates that a 10-second interval provides stable TAK GPS positioning on firmware 2.7.26.
 # Using values below 2 seconds may cause GPS instability or prevent positioning from working correctly.
 #
-# If you see any issues during a specific point in the script, run it again or reboot your node.
+# If you see any read / write errors during a specific point in the script, run it again or reboot your node.
 #
 # Please report all bugs or errors on my github page.
 #
